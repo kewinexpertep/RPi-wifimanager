@@ -29,10 +29,10 @@ export class AppComponent {
       // handle success
       if (response.data.payload.state === 'COMPLETED') {
         this.connected = response.data.payload.ssid
-        this.state = 'connected'
+        this.state = true
       }
       else
-        this.state = 'fail'
+        this.state = false
       console.log(response);
     })
     .catch(function (error) {
@@ -78,10 +78,10 @@ export class AppComponent {
       console.log(response);
       if (response.data.payload.state === 'COMPLETED') {
         this.connected = response.data.payload.ssid
-        this.state = 'connected'
+        this.state = true
       }
       else 
-        this.state = 'fail'
+        this.state = false
     })
     .catch(function (error) {
       // handle error

@@ -7,7 +7,7 @@
 </div>
 <ul class="list-group" *ngIf="wifis">
   <a href="#" *ngFor="let wifi of wifis; index as i; trackBy: trackByFn" (click)="basicModal.show()" (click)="SelectSsid(wifi)" [className]="getClass(wifi)" mdbWavesEffect>
-    {{wifi}}<span *ngIf="wifi == connected" class="badge badge-primary">{{state}}</span>
+    {{wifi}}<span *ngIf="wifi == connected" class="badge badge-primary">{{state?'connected':'fail'}}</span>
   </a>
 </ul>
 <button mdbBtn color="primary" mdbWavesEffect (click)="reFreshWifi()">refresh</button>
